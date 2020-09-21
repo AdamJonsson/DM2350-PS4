@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { FirestoreService } from './services/FirestoreService';
 
+// Connect to firebase host
+FirestoreService.establishDBConnectionToFirestoreProject();
+
+// Start the application 
 ReactDOM.render(
   <React.StrictMode>
     <App />
