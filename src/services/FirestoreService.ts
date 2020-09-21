@@ -1,5 +1,4 @@
 import firebase from "firebase";
-import 'firebase-functions';
 
 export class FirestoreService {
 
