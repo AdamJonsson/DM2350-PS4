@@ -5,7 +5,7 @@ import { Door } from "../models/Door";
 
 export async function uploadSurveyToFirestore(form: SurveyForm) {
     await FirestoreService.database.collection("Forms").doc().set(
-        form
+        form.getAsFirestoreObject()
     );
 }
 
