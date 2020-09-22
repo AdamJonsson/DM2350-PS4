@@ -9,6 +9,11 @@ export async function uploadSurveyToFirestore(form: SurveyForm) {
     );
 }
 
+export async function getSurveyAnswers() {
+    var result = await FirestoreService.database.collection("Forms").get();
+    return result.docs.map(doc => ({...doc.data()}));
+}
+
 export function getDoorDataInRandomOrder() {
     var doors: Door[] = doorsInJSONFormat.doors;
     shuffle(doors);
