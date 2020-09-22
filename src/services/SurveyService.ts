@@ -5,8 +5,13 @@ import { Door } from "../models/Door";
 
 export async function uploadSurveyToFirestore(form: SurveyForm) {
     await FirestoreService.database.collection("Forms").doc().set(
-        form
+        form.getAsFirestoreObject()
     );
+}
+
+export async function getSurveyAnswers() {
+    var result = await FirestoreService.database.collection("Forms").get();
+    return result.docs.map(doc => ({...doc.data()}));
 }
 
 export function getDoorDataInRandomOrder() {
@@ -15,7 +20,7 @@ export function getDoorDataInRandomOrder() {
     return doors;
 }
 
-function shuffle(array: Array<any>) {
+export function shuffle(array: Array<any>) {
     var m = array.length, t, i;
     
     // While there remain elements to shuffle…
