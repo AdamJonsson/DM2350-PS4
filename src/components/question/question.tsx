@@ -75,7 +75,7 @@ const Question: FC<QuestionProps> = (props) => {
           videoId={props.door.youtubeURL.replace("https://youtu.be/", "")}
           opts={{
             width: props.onMobile ? "100%" : "640",
-            playerVars: { rel: 0, showinfo: 0 },
+            playerVars: { rel: 1, showinfo: 0 },
           }}
         />
         <div className="controls">
