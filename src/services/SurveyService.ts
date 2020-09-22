@@ -15,7 +15,7 @@ export function getDoorDataInRandomOrder() {
     return doors;
 }
 
-function shuffle(array: Array<any>) {
+export function shuffle(array: Array<any>) {
     var m = array.length, t, i;
     
     // While there remain elements to shuffle…

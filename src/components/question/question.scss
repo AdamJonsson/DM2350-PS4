@@ -1,0 +1,18 @@
+.question-container {
+  padding: 1em 0;
+
+  h3 {
+    margin: 0.5em 0;
+  }
+
+  .controls {
+    padding: 1em;
+
+  }
+
+  &.error {
+    .MuiCard-root {
+      border-bottom: solid 2px red;
+    }
+  }
+}
