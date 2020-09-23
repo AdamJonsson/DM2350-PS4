@@ -2,11 +2,12 @@ import { Door } from "./Door";
 
 export class SurveyForm {
     constructor(
-        public ageOfSubject: number,
+        public ageOfSubject: string,
         public soundFamiliarity: number,
         public gender: string,
         public doorForms: DoorForm[],
         public otherComment: string,
+        public isMobile: boolean,
     ){};
 
     getAsFirestoreObject() {
@@ -16,6 +17,7 @@ export class SurveyForm {
             soundFamiliarity: this.soundFamiliarity,
             gender: this.gender,
             otherComment: this.otherComment,
+            isMobile: this.isMobile
         }
     }
 }
