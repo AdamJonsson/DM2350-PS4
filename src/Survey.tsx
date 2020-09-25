@@ -122,7 +122,7 @@ function Survey() {
                     play it as many times as you want by clicking the replay
                     button in the left-hand corner. Make sure you don't happen
                     to click on any other videos in the player. Answer what
-                    emotion you think the knock expresses.
+                    emotion you think the knock expresses. There is no right or wrong answer.
                   </p>
                   <TextField
                     label="How old are you?"
