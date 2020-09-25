@@ -79,7 +79,7 @@ const Question: FC<QuestionProps> = (props) => {
           }}
         />
         <div className="controls">
-          <h3>What emotion does this knock convey?</h3>
+          <h3>Which emotion does the knock express?</h3>
           <RadioGroup onChange={(e) => props.setEmotion(e.target.value)}>
             {emotions.map((emotion) => (
               <FormControlLabel
