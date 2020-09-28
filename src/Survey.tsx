@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import * as SurveyService from "./services/SurveyService";
 import Question from "./components/question/question";
@@ -17,6 +17,7 @@ import { isMobile } from "react-device-detect";
 import { Door } from "./models/Door";
 import { DoorForm, SurveyForm } from "./models/SurveyForm";
 import useWindowDimensions from "./hooks/useWindowDimensions";
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 function Survey() {
   const [doors, setDoors] = useState<Door[]>([]);
@@ -34,6 +35,9 @@ function Survey() {
   const [onMobile, setOnMobile] = useState(false);
 
   const [sent, setSent] = useState(false);
+
+  const loudAudioPlayer = useRef<HTMLAudioElement>(null);
+  const weakAudioPlayer = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     setOnMobile(windowDimensions.width < 700);
@@ -108,25 +112,61 @@ function Survey() {
               <Card>
                 <div className="content-padding" id="intro">
                   <h1>Evaluation of Knocking Sounds</h1>
-                  <p>
+                  <div>
                     If possible, please use a desktop or laptop computer to fill
                     in this form.
                     <br />
                     Use headphones and try to limit other distractions and noise
                     in your environment. <br />
                     <br />
-                    Every video plays sound, make sure you adjust your computer volume so
-                    that you can hear it. Be careful not to turn the volume up
-                    too loud. Adjust it according to the audio clip below and do not
-                    change it during the rest of the survey.
+                    Set you computer volume so that you can listen
+                    to the loud sound comfortably while also hearing 
+                    the quiet audio. Play the loud and quiet sounds by 
+                    pressing the buttons below.
+                    <br/><br/>
+                    <div>
+                      <Button
+                          onClick={() => {
+                              loudAudioPlayer.current?.play();
+                          }}
+                          variant="contained"
+                          color="primary"
+                          size="large"
+                          style={{
+                            marginRight: "15px"
+                          }}
+                          startIcon={<PlayArrowIcon />}
+                      >
+                          Play loud audio
+                      </Button>
+                      <audio ref={loudAudioPlayer} controls={false}>
+                        <source src={`/sounds/fear_42.wav`}/>
+                        Your browser does not support the video tag.
+                      </audio>
+                      
+                      <Button
+                          onClick={() => {
+                              weakAudioPlayer.current?.play();
+                          }}
+                          variant="contained"
+                          color="primary"
+                          size="large"
+                          startIcon={<PlayArrowIcon />}
+                      >
+                          Play quiet audio
+                      </Button>
+                      <audio ref={weakAudioPlayer} controls={false}>
+                        <source src={`/sounds/sadness_1.wav`}/>
+                        Your browser does not support the video tag.
+                      </audio>
+                    </div>
                     <br />
-                    Play and <b>watch</b> the video shown before answering. You
-                    can play it as many times as you want by clicking the replay
-                    button in the left-hand corner. Make sure you don't happen
-                    to click on any other videos in the player. Answer what
-                    emotion you think the knock expresses. There is no right or
-                    wrong answer.
-                  </p>
+                    <br />
+                    Play and <b>watch</b> the video shown before answering. You can
+                    play it as many times as you want by clicking the replay
+                    button in the left-hand corner. Answer what
+                    emotion you think the knock expresses. There is no right or wrong answer.
+                  </div>
                   <TextField
                     label="How old are you?"
                     required
