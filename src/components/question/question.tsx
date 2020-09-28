@@ -11,6 +11,7 @@ import YouTube from "react-youtube";
 import "./question.scss";
 import { shuffle } from "../../services/SurveyService";
 import { Door } from "../../models/Door";
+import CustomVideoPlayer from "./custom-video-player";
 
 interface QuestionProps {
   door: Door;
@@ -71,13 +72,21 @@ const Question: FC<QuestionProps> = (props) => {
       id={`door_${props.door.id}`}
     >
       <Card raised={!props.answered}>
-        <YouTube
+        <CustomVideoPlayer
+          onMobile={props.onMobile}
+          videoPath={`/videos/${props.door.localFile}`}
+          />
+        {/* <video width={props.onMobile ? "100%" : "640"} controls={true}>
+          <source src={`/videos/${props.door.localFile}`} type="video/mp4"/>
+          Your browser does not support the video tag.
+        </video> */}
+        {/* <YouTube
           videoId={props.door.youtubeURL.replace("https://youtu.be/", "")}
           opts={{
             width: props.onMobile ? "100%" : "640",
             playerVars: { rel: 1, showinfo: 0 },
           }}
-        />
+        /> */}
         <div className="controls">
           <h3>Which emotion does the knock express?</h3>
           <RadioGroup onChange={(e) => props.setEmotion(e.target.value)}>
