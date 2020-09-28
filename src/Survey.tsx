@@ -163,9 +163,8 @@ function Survey() {
                     <br />
                     <br />
                     Play and <b>watch</b> the video shown before answering. You can
-                    play it as many times as you want by clicking the replay
-                    button in the left-hand corner. Answer what
-                    emotion you think the knock expresses. There is no right or wrong answer.
+                    play it as many times as you want by clicking the play-button again. 
+                    There is no right or wrong answer.
                   </div>
                   <TextField
                     label="How old are you?"
