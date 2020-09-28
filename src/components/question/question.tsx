@@ -71,13 +71,17 @@ const Question: FC<QuestionProps> = (props) => {
       id={`door_${props.door.id}`}
     >
       <Card raised={!props.answered}>
-        <YouTube
+        <video width={props.onMobile ? "100%" : "640"} controls={true}>
+          <source src={`/videos/${props.door.localFile}`} type="video/mp4"/>
+          Your browser does not support the video tag.
+        </video>
+        {/* <YouTube
           videoId={props.door.youtubeURL.replace("https://youtu.be/", "")}
           opts={{
             width: props.onMobile ? "100%" : "640",
             playerVars: { rel: 1, showinfo: 0 },
           }}
-        />
+        /> */}
         <div className="controls">
           <h3>Emotion felt for this door</h3>
           <RadioGroup onChange={(e) => props.setEmotion(e.target.value)}>
