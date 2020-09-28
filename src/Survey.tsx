@@ -29,6 +29,7 @@ function Survey() {
   const [gender, setGender] = useState("");
   const [customGender, setCustomGender] = useState("");
   const [comment, setComment] = useState("");
+  const [influence, setInfluence] = useState("");
 
   const windowDimensions = useWindowDimensions();
   const [onMobile, setOnMobile] = useState(false);
@@ -83,6 +84,7 @@ function Survey() {
             checkCustomGender() ? customGender : gender,
             answers,
             comment,
+            influence,
             isMobile
           );
           SurveyService.uploadSurveyToFirestore(form).then(() => setSent(true));
@@ -92,8 +94,8 @@ function Survey() {
   };
 
   const checkCustomGender = () => {
-    return gender === "not-listed"
-  }
+    return gender === "not-listed";
+  };
 
   return (
     <div className="App">
@@ -212,13 +214,12 @@ function Survey() {
                       showErrors && soundFamiliarity === 0 ? "error-text" : ""
                     }
                   >
-                    Do you have any prior experience working with sound
-                    professionally or as a hobby? *
+                    How would you rate your experience with sound? *
                   </p>
                   <div className="marks">
                     <div className="marks-details">
-                      <FormLabel>1 - None</FormLabel>
-                      <FormLabel>5 - A lot</FormLabel>
+                      <FormLabel>1 - I don't have any experience</FormLabel>
+                      <FormLabel>5 - I am a sound professional</FormLabel>
                     </div>
                     <Slider
                       className={soundFamiliarity === 0 ? "noAnswer" : ""}
@@ -280,7 +281,9 @@ function Survey() {
               ))}
               <Card>
                 <div className="content-padding">
-                  <h2>Do you have anything to add (thougths, comments, etc)?</h2>
+                  <h2>
+                    Do you have anything to add (thougths, comments, etc)?
+                  </h2>
                   <div style={{ display: "flex" }}>
                     <TextField
                       id="outlined-multiline-static"
@@ -289,6 +292,19 @@ function Survey() {
                       placeholder="Write your thoughts"
                       variant="outlined"
                       onBlur={(e) => setComment(e.target.value)}
+                    />
+                  </div>
+                  <h2>
+                  What do you think about the materials of the doors? Did they influence your answers?
+                  </h2>
+                  <div style={{ display: "flex" }}>
+                    <TextField
+                      id="outlined-multiline-static"
+                      multiline
+                      rows={4}
+                      placeholder="Write your thoughts"
+                      variant="outlined"
+                      onBlur={(e) => setInfluence(e.target.value)}
                     />
                   </div>
                 </div>

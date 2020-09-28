@@ -7,6 +7,7 @@ export class SurveyForm {
         public gender: string,
         public doorForms: DoorForm[],
         public otherComment: string,
+        public influence: string,
         public isMobile: boolean,
     ){};
 
@@ -17,6 +18,7 @@ export class SurveyForm {
             soundFamiliarity: this.soundFamiliarity,
             gender: this.gender,
             otherComment: this.otherComment,
+            influence: this.influence,
             isMobile: this.isMobile
         }
     }
