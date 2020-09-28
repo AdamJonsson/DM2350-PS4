@@ -11,6 +11,7 @@ import YouTube from "react-youtube";
 import "./question.scss";
 import { shuffle } from "../../services/SurveyService";
 import { Door } from "../../models/Door";
+import CustomVideoPlayer from "./custom-video-player";
 
 interface QuestionProps {
   door: Door;
@@ -71,10 +72,14 @@ const Question: FC<QuestionProps> = (props) => {
       id={`door_${props.door.id}`}
     >
       <Card raised={!props.answered}>
-        <video width={props.onMobile ? "100%" : "640"} controls={true}>
+        <CustomVideoPlayer
+          onMobile={props.onMobile}
+          videoPath={`/videos/${props.door.localFile}`}
+          />
+        {/* <video width={props.onMobile ? "100%" : "640"} controls={true}>
           <source src={`/videos/${props.door.localFile}`} type="video/mp4"/>
           Your browser does not support the video tag.
-        </video>
+        </video> */}
         {/* <YouTube
           videoId={props.door.youtubeURL.replace("https://youtu.be/", "")}
           opts={{
