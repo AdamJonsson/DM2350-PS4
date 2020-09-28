@@ -83,7 +83,7 @@ const Question: FC<QuestionProps> = (props) => {
           <RadioGroup onChange={(e) => props.setEmotion(e.target.value)}>
             {emotions.map((emotion) => (
               <FormControlLabel
-			  	key={emotion}
+                key={emotion}
                 value={emotion}
                 label={emotion}
                 control={<Radio />}
@@ -97,7 +97,9 @@ const Question: FC<QuestionProps> = (props) => {
               <FormLabel>5 - Very confident</FormLabel>
             </div>
             <Slider
-              onChangeCommitted={(e, value) => handleConfidence(value as number)}
+              onChangeCommitted={(e, value) =>
+                handleConfidence(value as number)
+              }
               aria-labelledby="discrete-slider-custom"
               step={null}
               min={1}
@@ -108,7 +110,9 @@ const Question: FC<QuestionProps> = (props) => {
           </div>
         </div>
       </Card>
-      {displayError() && <div className="error-text">Don't forget to answer me!</div>}
+      {displayError() && (
+        <div className="error-text">Don't forget to answer me!</div>
+      )}
     </div>
   );
 };
