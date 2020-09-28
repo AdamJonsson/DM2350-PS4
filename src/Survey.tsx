@@ -13,6 +13,7 @@ import {
   Slider,
   TextField,
 } from "@material-ui/core";
+import { isMobile } from "react-device-detect";
 import { Door } from "./models/Door";
 import { DoorForm, SurveyForm } from "./models/SurveyForm";
 import useWindowDimensions from "./hooks/useWindowDimensions";
@@ -23,9 +24,10 @@ function Survey() {
   const [showErrors, setShowErrors] = useState(false);
   const [doorAnswers, setDoorAnswers] = useState<any>({});
 
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [soundFamiliarity, setSoundFamiliarity] = useState(0);
   const [gender, setGender] = useState("");
+  const [customGender, setCustomGender] = useState("");
   const [comment, setComment] = useState("");
 
   const windowDimensions = useWindowDimensions();
@@ -52,7 +54,7 @@ function Survey() {
 
   const sendSurvey = () => {
     if (document) {
-      if (gender === "" || age === 0 || soundFamiliarity === 0) {
+      if (gender === "" || age === "" || soundFamiliarity === 0) {
         document
           .getElementById(`intro`)!
           .scrollIntoView({ behavior: "smooth" });
@@ -78,15 +80,20 @@ function Survey() {
           const form = new SurveyForm(
             age,
             soundFamiliarity,
-            gender,
+            checkCustomGender() ? customGender : gender,
             answers,
-            comment
+            comment,
+            isMobile
           );
           SurveyService.uploadSurveyToFirestore(form).then(() => setSent(true));
         }
       }
     }
   };
+
+  const checkCustomGender = () => {
+    return gender === "not-listed"
+  }
 
   return (
     <div className="App">
@@ -153,17 +160,17 @@ function Survey() {
                     </div>
                     <br />
                     <br />
-                    Play the video shown before answering each question. You can
-                    play it as many times as you want. Answer what emotion you
-                    think the knock conveys.
+                    Play and <b>watch</b> the video shown before answering. You can
+                    play it as many times as you want by clicking the replay
+                    button in the left-hand corner. Answer what
+                    emotion you think the knock expresses. There is no right or wrong answer.
                   </div>
                   <TextField
                     label="How old are you?"
-                    type="number"
                     required
                     id="standard-basic"
-                    error={showErrors && age === 0}
-                    onBlur={(e) => setAge(parseInt(e.target.value))}
+                    error={showErrors && age === ""}
+                    onBlur={(e) => setAge(e.target.value)}
                   />
                   <br />
                   <FormControl className="form-control">
@@ -180,10 +187,24 @@ function Survey() {
                       <MenuItem value={"male"}>Male</MenuItem>
                       <MenuItem value={"female"}>Female</MenuItem>
                       <MenuItem value={"non-binary"}>Non-binary</MenuItem>
+                      <MenuItem value={"not-listed"}>Not listed</MenuItem>
                       <MenuItem value={"no-disclosure"}>
                         Don't want to disclose
                       </MenuItem>
                     </Select>
+                    {checkCustomGender() && (
+                      <TextField
+                        label="Specify your gender"
+                        required
+                        id="standard-basic"
+                        error={
+                          showErrors &&
+                          checkCustomGender() &&
+                          customGender === ""
+                        }
+                        onBlur={(e) => setCustomGender(e.target.value)}
+                      />
+                    )}
                   </FormControl>
                   <br />
                   <p
@@ -259,7 +280,7 @@ function Survey() {
               ))}
               <Card>
                 <div className="content-padding">
-                  <h2>What did you think of the survey?</h2>
+                  <h2>Do you have anything to add (thougths, comments, etc)?</h2>
                   <div style={{ display: "flex" }}>
                     <TextField
                       id="outlined-multiline-static"
