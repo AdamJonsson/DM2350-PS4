@@ -38,6 +38,8 @@ export class DoorForm {
             door: {
                 id: this.door.id,
                 youtubeURL: this.door.youtubeURL,
+                sound: this.door.sound,
+                material: this.door.material,
             },
             emotion: this.emotion,
             confidence: this.confidence,

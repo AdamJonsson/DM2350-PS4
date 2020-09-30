@@ -3,127 +3,178 @@
         {
             "id": 1,
             "youtubeURL": "https://youtu.be/sFRnpZDm2dE",
-            "localFile": "Door 1.mp4"
+            "localFile": "Door 1.mp4",
+            "sound": "Angry",
+            "material": "Wood - Texture 1"
+            
         },
         {
             "id": 2,
             "youtubeURL": "https://youtu.be/uXue46uUWRk",
-            "localFile": "Door 2.mp4"
+            "localFile": "Door 2.mp4",
+            "sound": "Sad",
+            "material": "Metal - Texture 2"
         },
         {
             "id": 3,
             "youtubeURL": "https://youtu.be/FDBfgEpTdEw",
-            "localFile": "Door 3.mp4"
+            "localFile": "Door 3.mp4",
+            "sound": "Happy",
+            "material": "Glass - Texture 1"
         },
         {
             "id": 4,
             "youtubeURL": "https://youtu.be/ELEK5SnejH8",
-            "localFile": "Door 4.mp4"
+            "localFile": "Door 4.mp4",
+            "sound": "Netural",
+            "material": "Metal - Texture 2"
         },
         {
             "id": 5,
             "youtubeURL": "https://youtu.be/okZAlYr9_dE",
-            "localFile": "Door 5.mp4"
+            "localFile": "Door 5.mp4",
+            "sound": "Sad",
+            "material": "Glass - Texture 1"
         },
         {
             "id": 6,
             "youtubeURL": "https://youtu.be/hUnHLlVX3E0",
-            "localFile": "Door 6.mp4"
+            "localFile": "Door 6.mp4",
+            "sound": "Angry",
+            "material": "Metal - Texture 2"
         },
         {
             "id": 7,
             "youtubeURL": "https://youtu.be/Q3RZPFBCW68",
-            "localFile": "Door 7.mp4"
+            "localFile": "Door 7.mp4",
+            "sound": "Fear",
+            "material": "Wood - Texture 1"
         },
         {
             "id": 8,
             "youtubeURL": "https://youtu.be/uVu13PuVqAM",
-            "localFile": "Door 8.mp4"
+            "localFile": "Door 8.mp4",
+            "sound": "Netural",
+            "material": "Metal - Texture 1"
         },
         {
             "id": 9,
             "youtubeURL": "https://youtu.be/a96O3SfvcbE",
-            "localFile": "Door 9.mp4"
+            "localFile": "Door 9.mp4",
+            "sound": "Happy",
+            "material": "Metal - Texture 2"
         },
         {
             "id": 10,
             "youtubeURL": "https://youtu.be/qAxZLt62SWU",
-            "localFile": "Door 10.mp4"
+            "localFile": "Door 10.mp4",
+            "sound": "Fear",
+            "material": "Wood - Texture 2"
         },
         {
             "id": 11,
             "youtubeURL": "https://youtu.be/USMsrENRhAU",
-            "localFile": "Door 11.mp4"
+            "localFile": "Door 11.mp4",
+            "sound": "Netural",
+            "material": "Wood - Texture 1"
         },
         {
             "id": 12,
             "youtubeURL": "https://youtu.be/q_w2rKo_EdU",
-            "localFile": "Door 12.mp4"
+            "localFile": "Door 12.mp4",
+            "sound": "Angry",
+            "material": "Wood - Texture 2"
         },
         {
             "id": 13,
             "youtubeURL": "https://youtu.be/xH53oLhgaU0",
-            "localFile": "Door 13.mp4"
+            "localFile": "Door 13.mp4",
+            "sound": "Fear",
+            "material": "Metal - Texture 1"
         },
         {
             "id": 14,
             "youtubeURL": "https://youtu.be/B0qx8gdXksE",
-            "localFile": "Door 14.mp4"
+            "localFile": "Door 14.mp4",
+            "sound": "Netural",
+            "material": "Glass - Texture 1"
         },
         {
             "id": 15,
             "youtubeURL": "https://youtu.be/zFKTQKeChHQ",
-            "localFile": "Door 15.mp4"
+            "localFile": "Door 15.mp4",
+            "sound": "Sad",
+            "material": "Wood - Texture 2"
         },
         {
             "id": 16,
             "youtubeURL": "https://youtu.be/m47wm3uAl5g",
-            "localFile": "Door 16.mp4"
+            "localFile": "Door 16.mp4",
+            "sound": "Happy",
+            "material": "Wood - Texture 1"
         },
         {
             "id": 17,
             "youtubeURL": "https://youtu.be/Bzc1QPvUq7c",
-            "localFile": "Door 17.mp4"
+            "localFile": "Door 17.mp4",
+            "sound": "Fear",
+            "material": "Glass - Texture 1"
         },
         {
             "id": 18,
             "youtubeURL": "https://youtu.be/eOWD6qcVwCg",
-            "localFile": "Door 18.mp4"
+            "localFile": "Door 18.mp4",
+            "sound": "Sad",
+            "material": "Wood - Texture 1"
         },
         {
             "id": 19,
             "youtubeURL": "https://youtu.be/ZYjNOxnf6hc",
-            "localFile": "Door 19.mp4"
+            "localFile": "Door 19.mp4",
+            "sound": "Happy",
+            "material": "Metal - Texture 1"
         },
         {
             "id": 20,
             "youtubeURL": "https://youtu.be/gKY9i0lz9IM",
-            "localFile": "Door 20.mp4"
+            "localFile": "Door 20.mp4",
+            "sound": "Angry",
+            "material": "Glass - Texture 1"
         },
         {
             "id": 21,
             "youtubeURL": "https://youtu.be/NZlB3sIUILQ",
-            "localFile": "Door 21.mp4"
+            "localFile": "Door 21.mp4",
+            "sound": "Fear",
+            "material": "Metal - Texture 2"
         },
         {
             "id": 22,
             "youtubeURL": "https://youtu.be/Hsjc16hD884",
-            "localFile": "Door 22.mp4"
+            "localFile": "Door 22.mp4",
+            "sound": "Sad",
+            "material": "Metal - Texture 1"
         },
         {
             "id": 23,
             "youtubeURL": "https://youtu.be/V_tMosw3tyI",
-            "localFile": "Door 23.mp4"
+            "localFile": "Door 23.mp4",
+            "sound": "Netural",
+            "material": "Wood - Texture 2"
         },
         {
             "id": 24,
             "youtubeURL": "https://youtu.be/xHdoWm6RxvA",
-            "localFile": "Door 24.mp4"
+            "localFile": "Door 24.mp4",
+            "sound": "Angry",
+            "material": "Metal - Texture 1"
         },
         {
             "id": 25,
             "youtubeURL": "https://youtu.be/Cr8ZPtCAaok",
-            "localFile": "Door 25.mp4"
+            "localFile": "Door 25.mp4",
+            "sound": "Happy",
+            "material": "Wood - Texture 2"
         }
     ]
 }
