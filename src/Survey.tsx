@@ -28,6 +28,7 @@ function Survey() {
   const [soundFamiliarity, setSoundFamiliarity] = useState(0);
   const [gender, setGender] = useState("");
   const [customGender, setCustomGender] = useState("");
+  const [hearingProblems, setHearingProblems] = useState("");
   const [comment, setComment] = useState("");
   const [influence, setInfluence] = useState("");
 
@@ -82,6 +83,7 @@ function Survey() {
             age,
             soundFamiliarity,
             checkCustomGender() ? customGender : gender,
+            hearingProblems,
             answers,
             comment,
             influence,
@@ -141,7 +143,7 @@ function Survey() {
                       </Button>
                       <audio ref={loudAudioPlayer} controls={false}>
                         <source src={`/sounds/fear_42.wav`}/>
-                        Your browser does not support the video tag.
+                        Your browser does not support the audio tag.
                       </audio>
                       
                       <Button
@@ -157,7 +159,7 @@ function Survey() {
                       </Button>
                       <audio ref={weakAudioPlayer} controls={false}>
                         <source src={`/sounds/sadness_1.wav`}/>
-                        Your browser does not support the video tag.
+                        Your browser does not support the audio tag.
                       </audio>
                     </div>
                     <br />
@@ -207,7 +209,19 @@ function Survey() {
                       />
                     )}
                   </FormControl>
-                  <br />
+                  <br/>
+                  <br/>
+                  Do you have any hearing problems that you are aware of?
+                  <div style={{ display: "flex" }}>
+                  <TextField
+                      id="outlined-multiline-static"
+                      multiline
+                      rows={4}
+                      placeholder="Write if you have hearing problems"
+                      variant="outlined"
+                      onBlur={(e) => setHearingProblems(e.target.value)}
+                    />
+                    </div>
                   <p
                     className={
                       showErrors && soundFamiliarity === 0 ? "error-text" : ""
