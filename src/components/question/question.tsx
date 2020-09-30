@@ -7,7 +7,6 @@ import {
   Slider,
 } from "@material-ui/core";
 import React, { FC, useEffect, useState } from "react";
-import YouTube from "react-youtube";
 import "./question.scss";
 import { shuffle } from "../../services/SurveyService";
 import { Door } from "../../models/Door";

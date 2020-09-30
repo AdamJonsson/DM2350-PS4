@@ -2,7 +2,7 @@ import {
     Button,
   } from "@material-ui/core";
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import "./custom-video-player.scss";
 
 interface CustomVideoPlayerProps {

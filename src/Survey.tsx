@@ -294,7 +294,7 @@ function Survey() {
                     />
                   </div>
                   <h2>
-                  What do you think about the materials of the doors? Did they influence your answers?
+                  Do you have any comments about the door materials and their relation to the knocks?
                   </h2>
                   <div style={{ display: "flex" }}>
                     <TextField
