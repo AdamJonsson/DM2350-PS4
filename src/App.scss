@@ -9,7 +9,9 @@
 
     .main {
       padding: 1em;
-      max-width: 640px;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 750px;
     }
 
     .form-control {

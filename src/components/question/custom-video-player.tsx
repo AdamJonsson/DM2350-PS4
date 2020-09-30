@@ -27,7 +27,7 @@ const CustomVideoPlayer: FC<CustomVideoPlayerProps> = (props) => {
           setCurrentlyPlaying(false);
         }}
         ref={videoRef}
-        width={props.onMobile ? "100%" : "640"}
+        width={"100%"}
         controls={false}
       >
         <source src={props.videoPath} type="video/mp4" />
