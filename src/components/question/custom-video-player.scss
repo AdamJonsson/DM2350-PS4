@@ -1,5 +1,9 @@
 .video-container {
     position: relative;
+    
+    &.paused {
+        cursor: pointer;
+    }
 }
 
 .video-controls {
